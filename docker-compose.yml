@@ -43,6 +43,12 @@ services:
     networks:
      - vessel
     restart: unless-stopped
+  redis:
+    image: redis:alpine
+    volumes:
+      - vesselredis:/data
+    networks:
+      - vessel
 networks:
   vessel:
     driver: "bridge"
